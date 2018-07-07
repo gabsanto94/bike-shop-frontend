@@ -10,11 +10,15 @@
   </tr>
   <tr *ngFor="let u of users">
     <td>{{u.userId}}</td>
-    <td>{{u.fName}}</td>
-    <td>{{u.lName}}</td>
+    <td>{{u.fname}}</td>
+    <td>{{u.lname}}</td>
     <td>{{u.email}}</td>
     <td>{{u.username}}</td>
     <td>{{u.userRole}}</td>
-    <td>DETAILS</td>
+    <td>
+      <button (click)="navigateToDetails(u.userId)" class="btn btn-warning" id="{{u.userId}}">Details</button>
+    </td>
   </tr>
 </table>
+
+{{clickMessage}}
