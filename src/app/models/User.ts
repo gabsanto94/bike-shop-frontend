@@ -1,12 +1,13 @@
 
-export class User {
+export interface User {
 
-  private username : string;
-  private password : string;
-  private fName : string;
-  private lName : string;
-  private userRole : string;
-  private email : string;
+  userId : number;
+  username : string;
+  password : string;
+  fname : string;
+  lname : string;
+  userRole : string;
+  email : string;
 
 
 
