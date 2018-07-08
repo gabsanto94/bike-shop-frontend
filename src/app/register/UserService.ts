@@ -31,7 +31,7 @@ export class UserService {
     }
 
     addUser(user:User) {
-      return this.http.get(`${config.Promise}/register/` + user.userId), user;
+      return this.http.get(`${config.Promise}/register/` + user);
     }
 
 
