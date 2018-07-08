@@ -4,10 +4,13 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import {ViewUsersComponent} from "./view-users/view-users.component";
 import {HttpClient, HttpClientModule} from "@angular/common/http";
+import {RegisterComponent} from './register/register.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    ViewUsersComponent,
+    RegisterComponent,
     ViewUsersComponent
   ],
   imports: [
