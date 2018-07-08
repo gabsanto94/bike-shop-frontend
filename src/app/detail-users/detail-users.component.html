@@ -1,0 +1,22 @@
+<table class="table table-bordered" *ngIf="!isLoaded">
+  <tr>
+    <th>ID</th>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Email</th>
+    <th>Username</th>
+    <th>Role</th>
+    <th>Action</th>
+  </tr>
+  <tr>
+    <td>{{u.userId}}</td>
+    <td>{{u.fname}}</td>
+    <td>{{u.lname}}</td>
+    <td>{{u.email}}</td>
+    <td>{{u.username}}</td>
+    <td>{{u.userRole}}</td>
+    <td>
+      Details
+    </td>
+  </tr>
+</table>
