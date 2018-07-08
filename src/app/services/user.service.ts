@@ -7,7 +7,7 @@ import {Observable} from "rxjs/Observable";
 @Injectable()
 export class UserService {
 
-  private readonly URL = "http://localhost:8080/bike-shop/users";
+  private readonly URL = "http://localhost:8080/bike-shop/admin/users";
 
   constructor(private http : HttpClient){}
 
@@ -16,7 +16,7 @@ export class UserService {
   }
 
   getUser(id : number){
-    return this.http.get<User[]>(this.URL + "/" + id);
+    return this.http.get<User>(this.URL + "/" + id);
   }
 
   update(user : User) : Observable<User>{

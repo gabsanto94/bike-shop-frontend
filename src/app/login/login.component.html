@@ -1,0 +1,44 @@
+<div style="text-align:center">
+  <h3>
+    Welcome to {{ title }}!
+  </h3>
+
+  <div *ngIf="!loggedIn">
+    <form id="loginGroup" [formGroup]="loginGroup">
+      <div>
+        Please enter your credentials to login
+      </div>
+      <br>
+      <div>
+        Username
+      </div>
+      <div>
+        <input type="text" formControlName="username" required>
+      </div>
+      <br>
+      <div>
+        Password
+      </div>
+      <div>
+        <input type="password" formControlName="password" required>
+      </div>
+      <br>
+      <button type="submit" form="submitForm" class="" (click)="onSubmit()">
+        Login
+      </button>
+    </form>
+  </div>
+
+  <div *ngIf="loggedIn">
+    <form id="logoutGroup" [formGroup]="logoutGroup">
+      <div>
+        {{username}} has been logged in successfully!
+      </div>
+      <br>
+      <button type="submit" form="submitForm1" class="" (click)="onLogout()">
+        Log Out
+      </button>
+    </form>
+  </div>
+
+</div>

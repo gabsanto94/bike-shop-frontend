@@ -1,4 +1,4 @@
-<table class="table table-bordered">
+<table class="table table-bordered" *ngIf="!isLoaded">
   <tr>
     <th>ID</th>
     <th>First Name</th>
@@ -8,7 +8,7 @@
     <th>Role</th>
     <th>Action</th>
   </tr>
-  <tr *ngFor="let u of users">
+  <tr>
     <td>{{u.userId}}</td>
     <td>{{u.fname}}</td>
     <td>{{u.lname}}</td>
@@ -16,7 +16,7 @@
     <td>{{u.username}}</td>
     <td>{{u.userRole}}</td>
     <td>
-      <button routerLink="{{u.userId}}" class="btn btn-warning" id="{{u.userId}}">Details</button>
+      Details
     </td>
   </tr>
 </table>
