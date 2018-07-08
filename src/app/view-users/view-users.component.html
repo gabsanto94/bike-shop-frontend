@@ -16,9 +16,7 @@
     <td>{{u.username}}</td>
     <td>{{u.userRole}}</td>
     <td>
-      <button (click)="navigateToDetails(u.userId)" class="btn btn-warning" id="{{u.userId}}">Details</button>
+      <button routerLink="{{u.userId}}" class="btn btn-warning" id="{{u.userId}}">Details</button>
     </td>
   </tr>
 </table>
-
-{{clickMessage}}
