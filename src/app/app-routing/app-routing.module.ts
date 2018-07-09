@@ -12,6 +12,7 @@ import {Router, RouterModule, Routes} from '@angular/router';
 import { HomeComponent } from 'src/app/home/home.component';
 import {ViewUsersComponent} from "../view-users/view-users.component";
 import {DetailUsersComponent} from "../detail-users/detail-users.component";
+import {RegisterComponent} from "../register/register.component";
 
 //no args redirect to home
 const routes = [
@@ -26,6 +27,9 @@ const routes = [
     },
     {
       path: 'admin/users', component: ViewUsersComponent
+    },
+    {
+      path: 'register', component: RegisterComponent
     }
 
     //customer path

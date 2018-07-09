@@ -3,6 +3,7 @@ import { User } from 'src/app/models/User';
 import {BillingAddress} from '../models/BillingAddress';
 import {ShippingAddress} from '../models/ShippingAddress';
 import {FormBuilder, FormGroup} from '@angular/forms';
+import {UserService} from "../services/user.service";
 
 
 
@@ -10,7 +11,7 @@ import {FormBuilder, FormGroup} from '@angular/forms';
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css'],
-  providers: [FormBuilder]
+  providers: [FormBuilder, UserService]
 })
 
 
@@ -52,29 +53,31 @@ export class RegisterComponent {
   //return this.myForm.value as User;
   //}
 
-  constructor() {
+  constructor(private userService : UserService) {
   }
 
   onSubmit() {
     //if (this.myForm.valid) {
     console.log("Form Submitted!");
 
-    const user : User = {userId: 1, fname: this.fname,
-      lname: this.lname, username: this.username,
-      password: this.password, email: this.email, userRole:''};
-
-    const shipping: ShippingAddress = { streetName: this.shipStreetName, city: this.shipCity,
+    const shipping = { streetName: this.shipStreetName, city: this.shipCity,
       state: this.shipState, zip: this.shipZip
-    }
+    };
 
-    const billing: BillingAddress = { streetName: this.billStreetName, city: this.billCity,
+    const bill = { streetName: this.billStreetName, city: this.billCity,
     state: this.billState, zip: this.billZip
-    }
+    };
+
+    const user = {userId: 0, fname: this.fname,
+      lname: this.lname, username: this.username,
+      password: this.password, email: this.email, userRole:'customer', billAddress: this.bill, shipAddress: this.ship};
     //this.u.lname = "possum";
     console.log(user);
-    console.log(shipping);
-    console.log(billing);
+    // console.log(shipping);
+    // console.log(bill);
     //console.log(this.myForm.value);
+
+    this.userService.addUser(user);
   }
   //}
   //private createForm(model: User): FormGroup {

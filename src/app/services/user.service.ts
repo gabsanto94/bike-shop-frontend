@@ -27,4 +27,10 @@ export class UserService {
     return this.http.delete<User>(`${this.URL}/${user.userId}`);
   }
 
+  addUser(user:User) : Observable<User>{
+    console.log("im inside the user servie: " + user.lname);
+    return this.http.post<User>(`http://localhost:8080/bike-shop/register`, user);
+  }
+
+
 }
