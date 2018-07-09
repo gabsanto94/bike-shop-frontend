@@ -3,6 +3,8 @@ import {HttpClientModule} from '@angular/common/http';
 import {HttpClient} from "@angular/common/http";
 import {User} from "../models/User";
 import {Observable} from "rxjs/Observable";
+import 'rxjs/add/operator/map';
+
 
 @Injectable()
 export class UserService {
@@ -27,10 +29,24 @@ export class UserService {
     return this.http.delete<User>(`${this.URL}/${user.userId}`);
   }
 
-  addUser(user:User) : Observable<User>{
-    console.log("im inside the user servie: " + user.lname);
-    return this.http.post<User>(`http://localhost:8080/bike-shop/register`, user);
-  }
+  //add the user here
 
+  login(username: string, password: string) {
+    return this.http.post<any>('/api/authenticate', { username: username, password: password })
+        .map(user => {
 
+            if (user && user.token) {
+
+                localStorage.setItem('currentUser', JSON.stringify(user));
+            }
+
+            return user;
+        });
 }
+
+logout() {
+    // remove user from local storage to log user out
+    localStorage.removeItem('currentUser');
+}
+}
+

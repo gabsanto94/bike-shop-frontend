@@ -77,7 +77,7 @@ export class RegisterComponent {
     // console.log(bill);
     //console.log(this.myForm.value);
 
-    this.userService.addUser(user);
+    //this.userService.addUser(user);
   }
   //}
   //private createForm(model: User): FormGroup {
