@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-
+import { UserService } from 'src/app/services/user.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -8,7 +8,8 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 })
 export class LoginComponent {
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder,
+              private userService: UserService) {
     this.buildForm();
     this.loggedIn = false;
   }
@@ -37,6 +38,7 @@ export class LoginComponent {
     this.password = this.loginGroup.value.password;
     this.loggedIn = true;
     console.log(this.username + " " + this.password);
+    this.userService.login(this.username,this.password);
   }
 
   public onLogout() {
