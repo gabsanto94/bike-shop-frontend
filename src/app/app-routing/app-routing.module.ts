@@ -12,24 +12,28 @@ import {Router, RouterModule, Routes} from '@angular/router';
 import { HomeComponent } from 'src/app/home/home.component';
 import {ViewUsersComponent} from "../view-users/view-users.component";
 import {DetailUsersComponent} from "../detail-users/detail-users.component";
-
+import { LoginComponent } from '../login/login.component';
+import {RegisterComponent} from '../register/register.component'
 //no args redirect to home
 const routes = [
-{
-    path: '', redirectTo: '/home', pathMatch: 'full'},
-    {
-      path: 'home', component: HomeComponent
-    },
+
     { //admin path
       //path: 'admin/users', component: ViewUsersComponent
       path: 'admin/users', redirectTo: '/admin/users', pathMatch: 'full'
     },
     {
       path: 'admin/users', component: ViewUsersComponent
-    }
+    },
 
     //customer path
-
+    
+      { path: 'home', component: HomeComponent },
+      { path: 'login', component: LoginComponent },
+      { path: 'register', component: RegisterComponent},
+      { path: '', component: RegisterComponent},//product
+      { path: 'ManageUser', component: ViewUsersComponent},//manageUsers
+      { path: '', component: RegisterComponent}//Cart
+    
 
 
     /*{

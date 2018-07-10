@@ -14,8 +14,10 @@ export class NavBarComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    
 
   }
+  
 
 goViewProducts(){
   console.log("this is where you put the  this.router.navigate(['/viewProducts'])");
