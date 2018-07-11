@@ -15,6 +15,7 @@ import {ReactiveFormsModule} from '@angular/forms';
 import {AuthInterceptor} from "./utils/auth.interceptor";
 import {LoggingInterceptor} from "./utils/logging.interceptor";
 import {UserService} from "./services/user.service";
+import {ProductViewComponent} from "./product-view/product-view.component";
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import {UserService} from "./services/user.service";
     NavBarComponent,
     HomeComponent,
     DetailUsersComponent,
-    LoginComponent
+    LoginComponent,
+    ProductViewComponent
   ],
   imports: [
     BrowserModule,

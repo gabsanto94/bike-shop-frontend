@@ -11,8 +11,8 @@ export interface User {
   userRole: string;
   email: string;
 
-  billAddress : BillingAddress;
-  shipAddress : ShippingAddress;
+  billingAddress : BillingAddress;
+  shippingAddress : ShippingAddress;
 
 
 }

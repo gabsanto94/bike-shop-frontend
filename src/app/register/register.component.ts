@@ -70,7 +70,7 @@ export class RegisterComponent {
 
     const user = {userId: 0, fname: this.fname,
       lname: this.lname, username: this.username,
-      password: this.password, email: this.email, userRole:'customer', billAddress: bill, shipAddress: shipping};
+      password: this.password, email: this.email, userRole:'customer', billingAddress: bill, shippingAddress: shipping};
 
     console.log(user);
 
