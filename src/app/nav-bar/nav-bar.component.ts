@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from "@angular/router";
 
+
 @Component({
   selector: 'app-nav-bar',
   templateUrl: './nav-bar.component.html',
@@ -14,8 +15,15 @@ export class NavBarComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    
 
   }
+ // onLogout() {
+   // this.router.navigate(['logout'], )
+   // console.log("logout");
+    // remove user from local storage to log user out
+//}
+  
 
 goViewProducts(){
   console.log("this is where you put the  this.router.navigate(['/viewProducts'])");
