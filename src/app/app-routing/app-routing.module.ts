@@ -1,7 +1,9 @@
 //import the pages from angular
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+<<<<<<< HEAD
 import {Router, RouterModule, Routes} from '@angular/router';
+>>>>>>> ViewProductAngular
 
 
 //import the stuff we make. ie the components
@@ -10,16 +12,25 @@ import {Router, RouterModule, Routes} from '@angular/router';
 //import { the name we give it in its spec} from 'its .component class path
 //import { NavBar } from 'src/app/Nav-Bar/Nav-Bar.component';
 import { HomeComponent } from 'src/app/home/home.component';
+<<<<<<< HEAD
+=======
+import { ProductViewComponent } from 'src/app/product-view/product-view.component';
+>>>>>>> ViewProductAngular
 import {ViewUsersComponent} from "../view-users/view-users.component";
 import {DetailUsersComponent} from "../detail-users/detail-users.component";
 
 //no args redirect to home
 const routes = [
+<<<<<<< HEAD
 {
     path: '', redirectTo: '/home', pathMatch: 'full'},
     {
       path: 'home', component: HomeComponent
     },
+    {
+      path: 'product', component:ProductViewComponent
+    },
+>>>>>>> ViewProductAngular
     { //admin path
       //path: 'admin/users', component: ViewUsersComponent
       path: 'admin/users', redirectTo: '/admin/users', pathMatch: 'full'
