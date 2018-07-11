@@ -70,26 +70,11 @@ export class RegisterComponent {
 
     const user = {userId: 0, fname: this.fname,
       lname: this.lname, username: this.username,
-      password: this.password, email: this.email, userRole:'customer', billAddress: this.bill, shipAddress: this.ship};
-    //this.u.lname = "possum";
+      password: this.password, email: this.email, userRole:'customer', billAddress: bill, shipAddress: shipping};
+
     console.log(user);
-    // console.log(shipping);
-    // console.log(bill);
-    //console.log(this.myForm.value);
 
-    //this.userService.addUser(user);
+    this.userService.addUser(user).subscribe();
+
   }
-  //}
-  //private createForm(model: User): FormGroup {
-  //return this.fb.group(model);
-  // }
-  // private updateForm(model: Partial<User>): void {
-  // this.myForm.patchValue(model)
-  //}
-
-
-  // onSubmit() {
-  // console.log(this.myForm.value);
-  // }
-  // private fb: FormBuilder
 }

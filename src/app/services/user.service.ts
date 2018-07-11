@@ -1,10 +1,9 @@
 import {Injectable} from "@angular/core";
-import {HttpClientModule} from '@angular/common/http';
+import {HttpClientModule, HttpHeaders} from '@angular/common/http';
 import {HttpClient} from "@angular/common/http";
 import {User} from "../models/User";
 import {Observable} from "rxjs/Observable";
 import 'rxjs/add/operator/map';
-
 
 @Injectable()
 export class UserService {
@@ -30,23 +29,26 @@ export class UserService {
   }
 
   //add the user here
+  addUser(user:User) : Observable<User> {
+    console.log(user);
+    return this.http.post<User>("http://localhost:8080/bike-shop/register/", user);
+  }
 
-  login(username: string, password: string) {
-    return this.http.post<any>('/api/authenticate', { username: username, password: password })
-        .map(user => {
+  getToken(){
+    return localStorage.getItem('token');
+  }
 
-            if (user && user.token) {
+  setToken(myToken : string){
+    localStorage.setItem("token", myToken);
+  }
 
-                localStorage.setItem('currentUser', JSON.stringify(user));
-            }
+  login(username : string, password: string){
+    return this.http.post<any>('http://localhost:8080/bike-shop/login', { user: username, pass: password });
+  }
 
-            return user;
-        });
-}
-
-logout() {
-    // remove user from local storage to log user out
-    localStorage.removeItem('currentUser');
-}
+  logout() {
+      // remove user from local storage to log user out
+      localStorage.removeItem('token');
+  }
 }
 
