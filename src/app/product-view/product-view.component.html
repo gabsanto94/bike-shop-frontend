@@ -1,0 +1,26 @@
+<table class="table table-bordered">
+  <tr>
+    <th>ProductID</th>
+    <th>Name</th>
+    <th>Manufacturer</th>
+    <th>Category</th>
+    <th>Description</th>
+    <th>Price</th>
+    <th>Status</th>
+    <th>InStock</th>
+    
+  </tr>
+  <tr *ngFor="let p of products">
+    <td>{{p.productId}}</td>
+    <td>{{p.name}}</td>
+    <td>{{p.manufacturer}}</td>
+    <td>{{p.category}}</td>
+    <td>{{p.description}}</td>
+    <td>{{p.price}}</td>
+    <td>{{p.status}}</td>
+    <td>{{p.inStock}}</td>
+    <td>
+      <button routerLink="{{p.productId}}" class="btn btn-warning" id="{{p.productId}}">Details</button>
+    </td>
+  </tr>
+</table>

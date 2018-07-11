@@ -1,0 +1,44 @@
+<h1>New Customer Registration</h1>
+
+
+
+<form (ngSubmit)="onSubmit()">
+
+  <h2>User Information</h2>
+  First Name: <input id = "fname" type="text" name="fname" [(ngModel)]="fname"/> {{fname}}
+  <br>
+  Last Name: <input type="text" name="lname" [(ngModel)]="lname"/> {{lname}}
+  <br>
+  Username: <input type="text" name="username" [(ngModel)]="username"/> {{username}}
+  <br>
+  Password: <input type="text" name="password" [(ngModel)]="password"/> {{password}}
+  <br>
+  Email: <input type="text" name="email" [(ngModel)]="email"/> {{email}}
+  <br>
+
+  <h2>Shipping Adress</h2>
+  City: <input id = "shipCity" type="text" name="shipCity" [(ngModel)]="shipCity"/> {{shipCity}}
+  <br>
+  State: <input id = "shipState" type="text" name="shipState" [(ngModel)]="shipState"/> {{shipState}}
+  <br>
+  Address: <input id = "shipStreetName" type="text" name="shipStreeName" [(ngModel)]="shipStreetName"/> {{shipStreetName}}
+  <br>
+  Zip Code: <input id = "shipZip" type="text" name="shipZip" [(ngModel)]="shipZip"/> {{shipZip}}
+  <br>
+
+  <h2>Billing Address</h2>
+  City: <input id = "billCity" type="text" name="billCity" [(ngModel)]="billCity"/> {{billCity}}
+  <br>
+  State: <input id = "billState" type="text" name="billState" [(ngModel)]="billState"/> {{billState}}
+  <br>
+  Address: <input id = "billtreetName" type="text" name="billStreeName" [(ngModel)]="billStreetName"/> {{billStreetName}}
+  <br>
+  Zip Code: <input id = "billZip" type="text" name="billZip" [(ngModel)]="billZip"/> {{billZip}}
+  <br>
+
+
+  <button type = "submit" class="btn btn-primary">Submit</button>
+
+
+
+</form>
