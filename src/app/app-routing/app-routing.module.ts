@@ -1,7 +1,7 @@
 //import the pages from angular
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {Router, RouterModule, Routes} from '@angular/router';
+import {Router, RouterModule, Routes, ROUTES} from '@angular/router';
 
 
 //import the stuff we make. ie the components
@@ -31,9 +31,14 @@ const routes = [
       { path: 'login', component: LoginComponent },
       { path: 'register', component: RegisterComponent},
       { path: '', component: RegisterComponent},//product
-      { path: 'ManageUser', component: ViewUsersComponent},//manageUsers
-      { path: '', component: RegisterComponent}//Cart
-    
+      { path: 'manageuser', component: ViewUsersComponent},//manageUsers
+      { path: '', component: RegisterComponent},//Cart
+       {
+         path: 'logout', component: LoginComponent
+       }, 
+  
+      
+      
 
 
     /*{

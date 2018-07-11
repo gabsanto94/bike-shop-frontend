@@ -28,19 +28,21 @@
       </button>
     </form>
   </div>
+
   <div>
-      <table *ngIf="isUserLoggedIn">
+      <table *ngIf="loggedIn">
           <tr>
               <td>
-                  <a href="#" (click)="logoutClicked($event)" id="logout"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> Logout</a><br
+                  <a href="#" (click)="logoutClicked($event)" id="logoutGroup"><span class="log-out" aria-hidden="true"></span></a>
+                  <br>
               /></td>
           </tr>
       </table>
   
-      <table *ngIf="! isUserLoggedIn">
+      <table *ngIf="! loggedIn">
           <tr>
               <td>
-                  <a [routerLink]="['/login']" id="login"><span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>Login</a><br
+                  <a [routerLink]="['/login']" id="login"><span class="log-in" aria-hidden="true"></span></a><br>
               /></td>
           </tr>
       </table>
