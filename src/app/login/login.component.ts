@@ -4,7 +4,8 @@ import { UserService } from 'src/app/services/user.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
+  providers: [UserService]
 })
 export class LoginComponent {
 
@@ -38,7 +39,12 @@ export class LoginComponent {
     this.password = this.loginGroup.value.password;
     this.loggedIn = true;
     console.log(this.username + " " + this.password);
-    this.userService.login(this.username,this.password);
+    let myToken = btoa(`${this.username}:${this.password}`);
+    //localStorage.setItem("token", myToken);
+    this.userService.setToken(myToken);
+    this.userService.login(this.username, this.password).subscribe(
+      resp => console.log(resp.head()));
+
   }
 
   public onLogout() {
