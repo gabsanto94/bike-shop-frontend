@@ -12,10 +12,7 @@ import {AppRoutingModule} from './app-routing/app-routing.module';
 import { DetailUsersComponent } from './detail-users/detail-users.component';
 import { LoginComponent } from './login/login.component';
 import {ReactiveFormsModule} from '@angular/forms';
-<<<<<<< HEAD
-=======
 import { ProductViewComponent } from './product-view/product-view.component';
->>>>>>> ViewProductAngular
 
 
 @NgModule({
@@ -26,11 +23,8 @@ import { ProductViewComponent } from './product-view/product-view.component';
     NavBarComponent,
     HomeComponent,
     DetailUsersComponent,
-    LoginComponent
-=======
     LoginComponent,
     ProductViewComponent
->>>>>>> ViewProductAngular
   ],
   imports: [
     BrowserModule,

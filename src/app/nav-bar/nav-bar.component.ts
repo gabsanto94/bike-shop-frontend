@@ -18,11 +18,11 @@ export class NavBarComponent implements OnInit {
     
 
   }
-  onLogout() {
-    this.router.navigate(['logout'], )
-    console.log("logout");
+ // onLogout() {
+   // this.router.navigate(['logout'], )
+   // console.log("logout");
     // remove user from local storage to log user out
-}
+//}
   
 
 goViewProducts(){
