@@ -29,16 +29,21 @@
     </form>
   </div>
 
-  <div *ngIf="loggedIn">
-    <form id="logoutGroup" [formGroup]="logoutGroup">
-      <div>
-        {{username}} has been logged in successfully!
-      </div>
-      <br>
-      <button type="submit" form="submitForm1" class="" (click)="onLogout()">
-        Log Out
-      </button>
-    </form>
+  <div>
+      <table *ngIf="loggedIn">
+          <tr>
+              <td>
+                  <a href="#" (click)="logoutClicked($event)" id="logoutGroup"><span class="log-out" aria-hidden="true"></span></a>
+                  <br>
+              /></td>
+          </tr>
+      </table>
+  
+      <table *ngIf="! loggedIn">
+          <tr>
+              <td>
+                  <a [routerLink]="['/login']" id="login"><span class="log-in" aria-hidden="true"></span></a><br>
+              /></td>
+          </tr>
+      </table>
   </div>
-
-</div>

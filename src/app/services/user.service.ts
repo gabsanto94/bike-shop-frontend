@@ -41,9 +41,10 @@ export class UserService {
         });
 }
 
-logout() {
+onLogout() {
     // remove user from local storage to log user out
     localStorage.removeItem('currentUser');
+    
 }
 }
 

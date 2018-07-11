@@ -7,15 +7,13 @@ import {HttpClient, HttpClientModule} from "@angular/common/http";
 import {RegisterComponent} from "./register/register.component";
 import {NavBarComponent} from "./nav-bar/nav-bar.component";
 import {HomeComponent} from "./home/home.component";
-import {RouterModule} from "@angular/router";
+import {RouterModule, Routes} from "@angular/router";
 import {AppRoutingModule} from './app-routing/app-routing.module';
 import { DetailUsersComponent } from './detail-users/detail-users.component';
 import { LoginComponent } from './login/login.component';
 import {ReactiveFormsModule} from '@angular/forms';
-<<<<<<< HEAD
-=======
 import { ProductViewComponent } from './product-view/product-view.component';
->>>>>>> ViewProductAngular
+
 
 @NgModule({
   declarations: [
@@ -25,11 +23,8 @@ import { ProductViewComponent } from './product-view/product-view.component';
     NavBarComponent,
     HomeComponent,
     DetailUsersComponent,
-    LoginComponent
-=======
     LoginComponent,
     ProductViewComponent
->>>>>>> ViewProductAngular
   ],
   imports: [
     BrowserModule,
