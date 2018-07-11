@@ -15,22 +15,12 @@ export class NavBarComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    
+
 
   }
- // onLogout() {
-   // this.router.navigate(['logout'], )
-   // console.log("logout");
-    // remove user from local storage to log user out
-//}
-  
 
-goViewProducts(){
-  console.log("this is where you put the  this.router.navigate(['/viewProducts'])");
-}
-
-goViewUsers(){
-
-}
+  logMeOut(){
+    console.log("delete my key and send me back to home page.");
+  }
 
 }

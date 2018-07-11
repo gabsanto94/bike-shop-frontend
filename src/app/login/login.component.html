@@ -1,49 +1,78 @@
-<div style="text-align:center">
-  <h3>
-    Welcome to {{ title }}!
-  </h3>
 
-  <div *ngIf="!loggedIn">
-    <form id="loginGroup" [formGroup]="loginGroup">
-      <div>
-        Please enter your credentials to login
+
+<div class="container">
+  <div class="title"><h1>Login</h1></div>
+  <hr>
+  <div class="row">
+    <img src="./resources/images/bike.jpg" class="img-responsive" alt="bike">
+  </div>
+
+  <div class="row">
+    <form>
+      <div class="form-group">
+        <label for="inputUsername">Username</label>
+        <input type="text" class="form-control" id="inputUsername" required>
       </div>
-      <br>
-      <div>
-        Username
+      <div class="form-group">
+        <label for="inputPassword">Password</label>
+        <input type="password" class="form-control" id="inputPassword" required>
       </div>
-      <div>
-        <input type="text" formControlName="username" name="username" required>
-      </div>
-      <br>
-      <div>
-        Password
-      </div>
-      <div>
-        <input type="password" formControlName="password" name="password" required>
-      </div>
-      <br>
-      <button type="submit" form="submitForm" class="" (click)="onSubmit()">
-        Login
-      </button>
+
+      <button type="button" id="login" class="btn btn-primary">Log in</button>
     </form>
   </div>
+</div>
 
-  <div>
-      <table *ngIf="loggedIn">
-          <tr>
-              <td>
-                  <a href="#" (click)="logoutClicked($event)" id="logoutGroup"><span class="log-out" aria-hidden="true"></span></a>
-                  <br>
-              /></td>
-          </tr>
-      </table>
-  
-      <table *ngIf="! loggedIn">
-          <tr>
-              <td>
-                  <a [routerLink]="['/login']" id="login"><span class="log-in" aria-hidden="true"></span></a><br>
-              /></td>
-          </tr>
-      </table>
+
+<div class="container">
+  <div style="text-align:center">
+    <h3>
+      Welcome to {{ title }}!
+    </h3>
+
+    <div *ngIf="!loggedIn">
+      <form id="loginGroup" [formGroup]="loginGroup">
+        <div>
+          Please enter your credentials to login
+        </div>
+        <br>
+        <div>
+          Username
+        </div>
+        <div>
+          <input type="text" formControlName="username" name="username" required>
+        </div>
+        <br>
+        <div>
+          Password
+        </div>
+        <div>
+          <input type="password" formControlName="password" name="password" required>
+        </div>
+        <br>
+        <button type="submit" form="submitForm" class="" (click)="onSubmit()">
+          Login
+        </button>
+      </form>
+    </div>
+
+    <table *ngIf="loggedIn">
+      <tr>
+        <td>
+          <a href="#" (click)="logoutClicked($event)" id="logoutGroup"><span class="log-out" aria-hidden="true"></span></a>
+          <br>
+          />
+        </td>
+      </tr>
+    </table>
+
+    <table *ngIf="! loggedIn">
+      <tr>
+        <td>
+          <a [routerLink]="['/login']" id="login">
+            <span class="log-in" aria-hidden="true"></span></a><br>
+        </td>
+      </tr>
+    </table>
   </div>
+</div>

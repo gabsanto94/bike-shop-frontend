@@ -1,20 +1,16 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class ="container">
-        <div class ="row">
-            <div class ="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
-                    <ul class="navbar-nav mr-auto">
-                    <button class="home" > <a routerLink="home">HOME</a></button>
-                    <button class="login" ><a routerLink ="login">LOGIN</a></button>
-                    <button class="register" ><a routerLink="register">REGISTER</a></button>
-                    <button class="products" ><a routerLink="product">VIEW PRODUCTS</a></button>
-                    <button class="ManageUsers" ><a routerLink="manageuser">MANAGE USERS</a></button>
-                    <button class="Cart" ><a routerLink="#">CART</a></button>
-                    <a href="#" (click)="logoutClicked($event)" id="logoutGroup"><span class="log-out" aria-hidden="true"></span>LOGOUT</a>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
-        </div>
-    </div>
+<div class="navbar navbar-inverse">
+  <div class="navbar-header">
+    <a id="welcome" class="navbar-brand" routerLink="home">TAGM</a>
+  </div>
+  <div class="navbar-collapse collapse">
+    <ul class="nav navbar-nav navbar-right">
+      <li><a routerLink="home">Home</a></li>
+      <li><a routerLink="products">Products</a></li>
+      <li><a routerLink="profile">Profile</a></li>
+      <li><a routerLink="admin/users">Manage Users</a></li>
+      <li><a routerLink="admin/products">Manage Products</a></li>
+      <li><a routerLink ="login">Login</a></li>
+      <li><a (click)="logMeOut()">Logout</a></li>
+    </ul>
+  </div>
+</div>

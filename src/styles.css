@@ -1,1 +1,103 @@
-/* You can add global styles to this file, and also import other style files */
+body
+{
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 24px;
+  letter-spacing: 1px;
+  height: 100%;
+  font-family: 'Roboto', sans-serif;
+}
+
+html, body
+{
+  height: 100%
+}
+
+th
+{
+  text-align: center;
+  width: 16.6%;
+}
+
+h1, h2, h3, h4, h5, h6
+{
+  font-family: 'Montserrat', sans-serif;
+}
+
+a
+{
+  text-decoration: none;
+  -webkit-transition: all 0.4s;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  font-family: 'Montserrat', sans-serif;
+  color: #000;
+}
+
+img
+{
+  width: 100%;
+}
+
+a:hover
+{
+  color: cornflowerblue;
+  text-decoration: none;
+}
+
+a:focus
+{
+  outline: none;
+  text-decoration: none;
+}
+
+p
+{
+  line-height: 32px;
+}
+
+ul, li
+{
+  margin: 0;
+  padding: 0;
+}
+
+fieldset
+{
+  border: 0 none;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.no-padding
+{
+  padding: 0
+}
+
+.section-padding
+{
+  padding: 70px 0;
+}
+
+.section-bottom-margin
+{
+  margin-bottom: 300px;
+}
+
+.section-title
+{
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-title h2
+{
+  margin-top: 0;
+  font-weight: 900;
+  text-transform: capitalize;
+}
+
+.section-title p
+{
+  font-weight: 300;
+}

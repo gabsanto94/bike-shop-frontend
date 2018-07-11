@@ -42,9 +42,7 @@ export class LoginComponent {
     let myToken = btoa(`${this.username}:${this.password}`);
     //localStorage.setItem("token", myToken);
     this.userService.setToken(myToken);
-    this.userService.login(this.username, this.password).subscribe(
-      resp => console.log(resp.head()));
-
+    this.userService.login(this.username, this.password).subscribe();
   }
 
   public onLogout() {
