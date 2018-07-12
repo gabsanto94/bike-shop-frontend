@@ -12,7 +12,8 @@ import {Observable} from 'rxjs';
 @Component({
   selector: 'cart-app',
   templateUrl: './cart.component.html',
-  styleUrls: ['./cart.component.css']
+  styleUrls: ['./cart.component.css'],
+  providers: [CartService]
 })
 export class CartComponent implements OnInit {
 
@@ -31,6 +32,15 @@ export class CartComponent implements OnInit {
 
   removeItemFromCart(id:number): void {
     this.cartService.delete(this.cart);
+  }
+
+  getTotalPrice(cartItem: CartItem){
+    let grandTotal: number = 0;
+
+    for( let i = 0; i <= cartItem.quantity; i++){
+      grandTotal += cartItem.product.price;
+    }
+    return grandTotal.toString();
   }
 }
 //this.cartService.getCart(this.user.userId)

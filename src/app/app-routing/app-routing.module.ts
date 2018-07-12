@@ -8,6 +8,7 @@ import { ProductViewComponent } from 'src/app/product-view/product-view.componen
 import {ViewUsersComponent} from "../view-users/view-users.component";
 import { LoginComponent } from '../login/login.component';
 import {RegisterComponent} from '../register/register.component'
+import {CartComponent} from '../cart/cart.component';
 //no args redirect to home
 const routes = [
 
@@ -25,7 +26,7 @@ const routes = [
       { path: 'register', component: RegisterComponent},
       { path: 'profile', component: RegisterComponent},//product
       { path: 'admin/users', component: ViewUsersComponent},//manageUsers
-      { path: 'cart', component: RegisterComponent},//Cart
+      { path: 'cart', component: CartComponent},//Cart
        {
          path: 'logout', component: LoginComponent
        }

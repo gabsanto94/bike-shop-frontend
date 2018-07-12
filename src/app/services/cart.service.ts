@@ -10,6 +10,8 @@ export class CartService {
 
   user: User;
 
+  grandTotal: number;
+
 
   private readonly URL = "http://localhost:8080/bike-shop/cart";
 
@@ -31,6 +33,8 @@ export class CartService {
   getCartItems(userID){
     return this.http.get<CartItem[]>(this.URL);
   }
+
+
 
 
 }

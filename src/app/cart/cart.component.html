@@ -1,9 +1,45 @@
-<div [ngClass]="'rightPanel'">
+<table class = "table table-bordered">
   <h3>Cart</h3>
-  <ul *ngFor="let item of cartItems">
-    <li>
+
+<tr>
+
+
+  <th>Product Name</th>
+  <th>Manufacturer</th>
+  <th>Price</th>
+  <th>Quantity</th>
+  <th>Total Price</th>
+
+
+</tr>
+
+
+  <tr *ngFor="let item of cartItems">
+
+
+    <td>{{item.product.name}}</td>
+    <td>{{item.product.manufacturer}}</td>
+    <td>{{item.product.price}}</td>
+    <td>{{item.quantity}}</td>
+    <td></td>
+
+    <td>
       <span> {{item.product}} </span>
       <span><button type="button" (click)="removeItemFromCart(item.cartItemId)">Remove</button></span>
-    </li>
-  </ul>
-</div>
+    </td>
+
+  </tr>
+
+  <tr class="row">
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><button type = "button" value = "check the heck iut" class = "btn btn-primary">Checkout</button></td>
+    <td>{{getTotalPrice()}}</td>
+  </tr>
+
+
+
+
+
+</table>
