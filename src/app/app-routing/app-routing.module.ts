@@ -24,13 +24,6 @@ const routes = [
     {
       path: 'product/:id', component:ProductViewIndividualComponent
     },
-    { //admin path
-      //path: 'admin/users', component: ViewUsersComponent
-      path: 'admin/users', redirectTo: '/admin/users', pathMatch: 'full'
-    },
-    {
-      path: 'admin/users', component: ViewUsersComponent
-    },
 
     //customer path
       { path: 'login', component: LoginComponent },
