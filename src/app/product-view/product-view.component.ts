@@ -15,13 +15,13 @@ export class ProductViewComponent implements OnInit {
   public products : Product[];
 
   constructor(private productService : ProductService,
-    private router : Router) { 
+    private router : Router) {
 
     console.log("product view constructor")
   }
 
   ngOnInit() {
-    console.log("product ngonit")
+    console.log("product ngonit");
     this.productService.getProducts().subscribe(data => {this.products = data; console.log(data)})
   }
 
