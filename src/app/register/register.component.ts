@@ -5,15 +5,12 @@ import {ShippingAddress} from '../models/ShippingAddress';
 import {FormBuilder, FormGroup} from '@angular/forms';
 import {UserService} from "../services/user.service";
 
-
-
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css'],
   providers: [FormBuilder, UserService]
 })
-
 
 export class RegisterComponent {
 
@@ -22,6 +19,7 @@ export class RegisterComponent {
   lname = '';
   username: '';
   password: '';
+  repassword: '';
   email: '';
   //shipping info
   shipStreetName: '';
@@ -38,22 +36,13 @@ export class RegisterComponent {
   public u : User;
   public ship: ShippingAddress;
   public bill: BillingAddress;
-  /*myForm: FormGroup = this.createForm({
-    userId: 0,
-    username: '',
-    password: '',
-    fname: '',
-    lname: '',
-    userRole: '',
-    email: ''
-  });
-  */
-
-  //get formValue() {
-  //return this.myForm.value as User;
-  //}
 
   constructor(private userService : UserService) {
+  }
+
+  sameAddress(){
+    //assign previous values to the shipping address
+
   }
 
   onSubmit() {

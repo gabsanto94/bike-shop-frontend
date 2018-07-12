@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import { UserService } from 'src/app/services/user.service';
+import {Router, RouterModule, Routes} from '@angular/router';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -10,7 +12,8 @@ import { UserService } from 'src/app/services/user.service';
 export class LoginComponent {
 
   constructor(private formBuilder: FormBuilder,
-              private userService: UserService) {
+              private userService: UserService,
+              private router : Router) {
     this.buildForm();
     this.loggedIn = false;
   }
@@ -18,6 +21,7 @@ export class LoginComponent {
   public username: string;
   public password: string;
   public loggedIn: boolean;
+  public msg : string;
 
   public loginGroup: FormGroup;
   public logoutGroup: FormGroup;
@@ -42,7 +46,22 @@ export class LoginComponent {
     let myToken = btoa(`${this.username}:${this.password}`);
     //localStorage.setItem("token", myToken);
     this.userService.setToken(myToken);
-    this.userService.login(this.username, this.password).subscribe();
+    this.userService.login(this.username, this.password).subscribe(
+
+      suc => {
+        console.log(suc);
+        localStorage.setItem('username', this.username);
+        localStorage.setItem('isLoggedIn', "true");
+        localStorage.setItem('userId', suc.principal.userId);
+        localStorage.setItem('role', suc.principal.userRole);
+        this.router.navigate(['home']);
+      },
+      err => {
+        console.log(err);
+        this.msg = "Invalid Password";
+      }
+
+    );
   }
 
   public onLogout() {

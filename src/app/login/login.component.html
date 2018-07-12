@@ -4,75 +4,25 @@
   <div class="title"><h1>Login</h1></div>
   <hr>
   <div class="row">
-    <img src="./resources/images/bike.jpg" class="img-responsive" alt="bike">
-  </div>
-
-  <div class="row">
-    <form>
-      <div class="form-group">
-        <label for="inputUsername">Username</label>
-        <input type="text" class="form-control" id="inputUsername" required>
-      </div>
-      <div class="form-group">
-        <label for="inputPassword">Password</label>
-        <input type="password" class="form-control" id="inputPassword" required>
-      </div>
-
-      <button type="button" id="login" class="btn btn-primary">Log in</button>
-    </form>
-  </div>
-</div>
-
-
-<div class="container">
-  <div style="text-align:center">
-    <h3>
-      Welcome to {{ title }}!
-    </h3>
-
-    <div *ngIf="!loggedIn">
+    <div class="col-md-6">
       <form id="loginGroup" [formGroup]="loginGroup">
-        <div>
-          Please enter your credentials to login
+        <div class="form-group">
+          <label for="inputUsername">Username</label>
+          <input type="text" formControlName="username" class="form-control" id="inputUsername" required>
         </div>
-        <br>
-        <div>
-          Username
+        <div class="form-group">
+          <label for="inputPassword">Password</label>
+          <input type="password" formControlName="password" class="form-control" id="inputPassword" required>
         </div>
-        <div>
-          <input type="text" formControlName="username" name="username" required>
-        </div>
-        <br>
-        <div>
-          Password
-        </div>
-        <div>
-          <input type="password" formControlName="password" name="password" required>
-        </div>
-        <br>
-        <button type="submit" form="submitForm" class="" (click)="onSubmit()">
-          Login
-        </button>
+
+        <button type="submit" id="login" class="btn btn-primary" (click)="onSubmit()">Log in</button>
+        <button type="button" id="register" class="btn btn-primary" routerLink ="register">Register</button>
       </form>
     </div>
 
-    <table *ngIf="loggedIn">
-      <tr>
-        <td>
-          <a href="#" (click)="logoutClicked($event)" id="logoutGroup"><span class="log-out" aria-hidden="true"></span></a>
-          <br>
-          />
-        </td>
-      </tr>
-    </table>
+    <div class="col-md-6">
+      <p>image here</p>
+    </div>
 
-    <table *ngIf="! loggedIn">
-      <tr>
-        <td>
-          <a [routerLink]="['/login']" id="login">
-            <span class="log-in" aria-hidden="true"></span></a><br>
-        </td>
-      </tr>
-    </table>
   </div>
 </div>

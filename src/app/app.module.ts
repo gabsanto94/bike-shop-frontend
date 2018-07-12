@@ -16,6 +16,7 @@ import {AuthInterceptor} from "./utils/auth.interceptor";
 import {LoggingInterceptor} from "./utils/logging.interceptor";
 import {UserService} from "./services/user.service";
 import {ProductViewComponent} from "./product-view/product-view.component";
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import {ProductViewComponent} from "./product-view/product-view.component";
     HomeComponent,
     DetailUsersComponent,
     LoginComponent,
-    ProductViewComponent
+    ProductViewComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
