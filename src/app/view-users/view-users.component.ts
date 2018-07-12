@@ -22,7 +22,6 @@ export class ViewUsersComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log("im in ngoninit");
     this.userService.getUsers().subscribe(data => {this.users = data; console.log(data)})
 
   }

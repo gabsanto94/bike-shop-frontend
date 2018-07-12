@@ -28,6 +28,9 @@ export class AuthInterceptor implements HttpInterceptor{
 
       console.log("NEW REQUEST: ", tokenRequest);
 
+      console.log(tokenRequest.headers);
+
+
       return next.handle(tokenRequest);
   }
 
