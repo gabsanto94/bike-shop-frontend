@@ -21,8 +21,7 @@ export class AuthInterceptor implements HttpInterceptor{
     //append to add to the headers
       let tokenRequest = req.clone({
         setHeaders: {
-          Authorization: `Basic ${this.userService.getToken()}`,
-          //Authorization: `Basic asd9=`
+          Authorization: `Basic ${this.userService.getToken()}`
         }
       });
 
