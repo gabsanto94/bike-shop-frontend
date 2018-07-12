@@ -4,13 +4,15 @@ import {HttpClient} from "@angular/common/http";
 import {User} from "../models/User";
 import {Observable} from "rxjs/Observable";
 import 'rxjs/add/operator/map';
+import {Router} from "@angular/router";
 
 @Injectable()
 export class UserService {
 
   private readonly URL = "http://localhost:8080/bike-shop/admin/users";
 
-  constructor(private http : HttpClient){}
+  constructor(private http : HttpClient,
+              private router : Router){}
 
   getUsers(){
     return this.http.get<User[]>(this.URL);
@@ -44,11 +46,6 @@ export class UserService {
 
   login(username : string, password: string){
     return this.http.post<any>('http://localhost:8080/bike-shop/login', { user: username, pass: password });
-  }
-
-  logout() {
-      // remove user from local storage to log user out
-      localStorage.removeItem('token');
   }
 }
 
