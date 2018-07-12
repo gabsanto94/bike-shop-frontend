@@ -18,7 +18,10 @@ const routes = [
       path: 'home', component: HomeComponent
     },
     {
+<<<<<<< HEAD
       path: 'products', component:ProductViewComponent
+=======
+      path: 'product', component:ProductViewComponent
     },
     {
       path: 'product/:id', component:ProductViewIndividualComponent

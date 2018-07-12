@@ -17,6 +17,7 @@ import {LoggingInterceptor} from "./utils/logging.interceptor";
 import {UserService} from "./services/user.service";
 import {ProductViewComponent} from "./product-view/product-view.component";
 import { ProductViewIndividualComponent } from './product-view-individual/product-view-individual.component';
+import {CartComponent} from './cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { ProductViewIndividualComponent } from './product-view-individual/produc
     LoginComponent,
     ProductViewComponent,
     ProductViewIndividualComponent
+    CartComponent
   ],
   imports: [
     BrowserModule,
