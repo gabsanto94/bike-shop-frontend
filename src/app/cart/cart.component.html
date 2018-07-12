@@ -1,0 +1,9 @@
+<div [ngClass]="'rightPanel'">
+  <h3>Cart</h3>
+  <ul *ngFor="let item of cartItems">
+    <li>
+      <span> {{item.product}} </span>
+      <span><button type="button" (click)="removeItemFromCart(item.cartItemId)">Remove</button></span>
+    </li>
+  </ul>
+</div>
