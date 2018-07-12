@@ -39,6 +39,10 @@ img
   width: 100%;
 }
 
+.btn{
+  margin: 3px;
+}
+
 a:hover
 {
   color: cornflowerblue;

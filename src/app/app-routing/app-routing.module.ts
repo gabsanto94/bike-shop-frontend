@@ -5,6 +5,7 @@ import {Router, RouterModule, Routes} from '@angular/router';
 
 import { HomeComponent } from 'src/app/home/home.component';
 import { ProductViewComponent } from 'src/app/product-view/product-view.component';
+import { ProductViewIndividualComponent } from 'src/app/product-view-individual/product-view-individual.component';
 import {ViewUsersComponent} from "../view-users/view-users.component";
 import { LoginComponent } from '../login/login.component';
 import {RegisterComponent} from '../register/register.component'
@@ -19,6 +20,16 @@ const routes = [
     },
     {
       path: 'products', component:ProductViewComponent
+    },
+    {
+      path: 'product/:id', component:ProductViewIndividualComponent
+    },
+    { //admin path
+      //path: 'admin/users', component: ViewUsersComponent
+      path: 'admin/users', redirectTo: '/admin/users', pathMatch: 'full'
+    },
+    {
+      path: 'admin/users', component: ViewUsersComponent
     },
 
     //customer path
