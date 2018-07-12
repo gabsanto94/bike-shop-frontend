@@ -25,7 +25,12 @@ export class ProductService {
     return this.http.put<Product>(`${this.URL}/${product.productId}`, product);
   }
 
-  delete(product : Product) : Observable<Product>{
-    return this.http.delete<Product>(`${this.URL}/${product.productId}`);
+  delete(id : number){
+    return this.http.delete<Product>(`${this.URL}/${id}`);
+  }
+  
+  addProduct(product :Product) : Observable<Product> {
+    console.log(product);
+    return this.http.post<Product>("http://localhost:8080/bike-shop/products/", product);
   }
 }

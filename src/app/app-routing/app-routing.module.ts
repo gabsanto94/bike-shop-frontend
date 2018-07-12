@@ -12,6 +12,7 @@ import {Router, RouterModule, Routes} from '@angular/router';
 //import { NavBar } from 'src/app/Nav-Bar/Nav-Bar.component';
 import { HomeComponent } from 'src/app/home/home.component';
 import { ProductViewComponent } from 'src/app/product-view/product-view.component';
+import { ProductViewIndividualComponent } from 'src/app/product-view-individual/product-view-individual.component';
 import {ViewUsersComponent} from "../view-users/view-users.component";
 import {DetailUsersComponent} from "../detail-users/detail-users.component";
 import { LoginComponent } from '../login/login.component';
@@ -26,6 +27,9 @@ const routes = [
     },
     {
       path: 'product', component:ProductViewComponent
+    },
+    {
+      path: 'product/:id', component:ProductViewIndividualComponent
     },
     { //admin path
       //path: 'admin/users', component: ViewUsersComponent

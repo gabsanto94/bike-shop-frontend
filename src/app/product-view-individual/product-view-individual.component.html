@@ -1,0 +1,87 @@
+<p>This is view individual product</p>
+
+<div class="container border" *ngIf="openProduct">
+
+  <table class="table table-bordered">
+    <tr>
+      <th>Name</th>
+      <th>Manufacturer</th>
+      <th>Category</th>
+      <th>Description</th>
+      <th>Price</th>
+      <th>Status</th>
+      <th>InStock</th>
+    </tr>
+    <tr>
+      <td>{{openProduct.name}}</td>
+      <td>{{openProduct.manufacturer}}</td>
+      <td>{{openProduct.category}}</td>
+      <td>{{openProduct.description}}</td>
+      <td>{{openProduct.price}}</td>
+      <td>{{openProduct.status}}</td>
+      <td>{{openProduct.inStock}}</td>
+      <td>
+        <button class="btn btn-primary" (click)="editProduct()">Edit Product</button>
+      </td>
+      <td>
+        <button class="btn btn-primary" (click)="createProduct()">Create Product</button>
+      </td>
+    </tr>
+    <!-- you could add an ngif customer then on this for security-->
+  </table>
+
+  <table class="table table-bordered" *ngIf="isClicked">
+    <p>WOW EDIT A BIKE HERE</p>
+    <tr>
+      <th>Name</th>
+      <th>Manufacturer</th>
+      <th>Category</th>
+      <th>Description</th>
+      <th>Price</th>
+      <th>Status</th>
+      <th>InStock</th>
+    </tr>
+    <tr>
+      <td><input id = "name" type="text" name="name" [(ngModel)]="name"/></td>
+      <td><input id = "manufacturer" type="text" name="manufacturer" [(ngModel)]="manufacturer"/></td>
+      <td><input id = "category" type="text" name="category" [(ngModel)]="category"/></td>
+      <td><input id = "description" type="text" name="description" [(ngModel)]="description"/></td>
+      <td><input id = "price" type="text" name="price" [(ngModel)]="price"/></td>
+      <td><input id = "status" type="text" name="status" [(ngModel)]="status"/></td>
+      <td><input id = "inStock" type="text" name="inStock" [(ngModel)]="inStock"/></td>
+      <td>
+        <button class="btn btn-primary" (click)="submitProduct()">Submit Edit</button>
+      </td>
+      <td>
+        <button class="btn btn-primary" (click)="deleteProduct()">Actually Delete It</button>
+      </td>
+    </tr>
+  
+  </table>  
+
+  <table class="table table-bordered" *ngIf="isCreateClicked">
+      <p>WOW CREATE A BIKE HERE</p>
+      <tr>
+        <th>Name</th>
+        <th>Manufacturer</th>
+        <th>Category</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Status</th>
+        <th>InStock</th>
+      </tr>
+      <tr>
+        <td><input id = "nameCreate" type="text" name="nameCreate" [(ngModel)]="nameCreate"/></td>
+        <td><input id = "manufacturer1Create" type="text" name="manufacturerCreate" [(ngModel)]="manufacturerCreate"/></td>
+        <td><input id = "categoryCreate" type="text" name="categoryCreate" [(ngModel)]="categoryCreate"/></td>
+        <td><input id = "descriptionCreate" type="text" name="descriptionCreate" [(ngModel)]="descriptionCreate"/></td>
+        <td><input id = "priceCreate" type="text" name="priceCreate" [(ngModel)]="priceCreate"/></td>
+        <td><input id = "statusCreate" type="text" name="statusCreate" [(ngModel)]="statusCreate"/></td>
+        <td><input id = "inStockCreate" type="text" name="inStockCreate" [(ngModel)]="inStockCreate"/></td>
+        <td>
+          <button class="btn btn-primary" (click)="addTheProduct()">Submit Add</button>
+        </td>
+      </tr>
+    
+    </table>  
+</div>
