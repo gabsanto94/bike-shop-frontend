@@ -1,6 +1,7 @@
-<p>This is view individual product</p>
+<div class="container" *ngIf="openProduct">
 
-<div class="container border" *ngIf="openProduct">
+  <h1>Product Detail</h1>
+  <hr>
 
   <table class="table table-bordered">
     <tr>
@@ -11,29 +12,29 @@
       <th>Price</th>
       <th>Status</th>
       <th>InStock</th>
+      <th>Action</th>
     </tr>
     <tr>
       <td>{{openProduct.name}}</td>
       <td>{{openProduct.manufacturer}}</td>
       <td>{{openProduct.category}}</td>
       <td>{{openProduct.description}}</td>
-      <td>{{openProduct.price}}</td>
+      <td>{{openProduct.price | currency}}</td>
       <td>{{openProduct.status}}</td>
       <td>{{openProduct.inStock}}</td>
+      <td>
+        <button *ngIf="adminVar === 'admin' " class="btn btn-warning" (click)="editProduct()">Edit</button>
 
-
-      <td *ngIf="adminVar === 'admin' ">
-        <button class="btn btn-primary" (click)="editProduct()">Edit Product</button>
-      </td>
-      <td *ngIf="adminVar === 'admin'">
-        <button class="btn btn-primary" (click)="createProduct()">Create Product</button>
+        <button *ngIf="adminVar === 'admin'" class="btn btn-info" (click)="createProduct()">Create</button>
       </td>
     </tr>
     <!-- you could add an ngif customer then on this for security-->
   </table>
 
   <table class="table table-bordered" *ngIf="isClicked">
-    <p>WOW EDIT A BIKE HERE</p>
+      <h3>WOW EDIT A BIKE HERE</h3>
+      <hr>
+
     <tr>
       <th>Name</th>
       <th>Manufacturer</th>
@@ -52,17 +53,18 @@
       <td><input id = "status" type="text" name="status" [(ngModel)]="status"/></td>
       <td><input id = "inStock" type="text" name="inStock" [(ngModel)]="inStock"/></td>
       <td>
-        <button class="btn btn-primary" (click)="submitProduct()">Submit Edit</button>
+        <button class="btn btn-primary" (click)="submitProduct()">Submit</button>
       </td>
       <td>
-        <button class="btn btn-primary" (click)="deleteProduct()">Actually Delete It</button>
+        <button class="btn btn-danger" (click)="deleteProduct()">Delete</button>
       </td>
     </tr>
 
   </table>
 
   <table class="table table-bordered" *ngIf="isCreateClicked">
-      <p>WOW CREATE A BIKE HERE</p>
+    <h3>WOW CREATE A BIKE HERE</h3>
+    <hr>
       <tr>
         <th>Name</th>
         <th>Manufacturer</th>

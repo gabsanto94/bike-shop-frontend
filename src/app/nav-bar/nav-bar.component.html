@@ -7,7 +7,7 @@
       <li><a routerLink="home">Home</a></li>
       <li><a routerLink="products">Products</a></li>
       <li *ngIf="isActive() && checkAdminRole()"><a routerLink="admin/users">Manage Users</a></li>
-      <li *ngIf="isActive()"><a routerLink="profile">Profile</a></li>
+      <!--<li *ngIf="isActive()"><a routerLink="profile">Profile</a></li>-->
       <li *ngIf="userLoggedIn"><a routerLink ="login">Login</a></li>
       <li *ngIf="isActive()"><a (click)="logMeOut()">Logout</a></li>
       <li *ngIf="isActive()"><a  routerLink="cart">Cart</a></li>

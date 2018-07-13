@@ -4,6 +4,7 @@ import {BillingAddress} from '../models/BillingAddress';
 import {ShippingAddress} from '../models/ShippingAddress';
 import {FormBuilder, FormGroup} from '@angular/forms';
 import {UserService} from "../services/user.service";
+import {Cart} from "../models/Cart";
 
 @Component({
   selector: 'app-register',
@@ -36,6 +37,8 @@ export class RegisterComponent {
   public u : User;
   public ship: ShippingAddress;
   public bill: BillingAddress;
+  public carty : Cart;
+
 
   constructor(private userService : UserService) {
   }
@@ -57,9 +60,14 @@ export class RegisterComponent {
     state: this.billState, zip: this.billZip
     };
 
+    const cart = {
+      cartId: 0, quantity: 0, grandTotal: 0, cartItem: null, user: this.u
+    };
+
     const user = {userId: 0, fname: this.fname,
       lname: this.lname, username: this.username,
-      password: this.password, email: this.email, userRole:'customer', billingAddress: bill, shippingAddress: shipping};
+      password: this.password, email: this.email, userRole:'customer', billingAddress: bill, shippingAddress: shipping, cart: this.carty};
+
 
     console.log(user);
 

@@ -1,22 +1,57 @@
-<table class="table table-bordered" *ngIf="!isLoaded">
-  <tr>
-    <th>ID</th>
-    <th>First Name</th>
-    <th>Last Name</th>
-    <th>Email</th>
-    <th>Username</th>
-    <th>Role</th>
-    <th>Action</th>
-  </tr>
-  <tr>
-    <td>{{u.userId}}</td>
-    <td>{{u.fname}}</td>
-    <td>{{u.lname}}</td>
-    <td>{{u.email}}</td>
-    <td>{{u.username}}</td>
-    <td>{{u.userRole}}</td>
-    <td>
-      Details
-    </td>
-  </tr>
-</table>
+<div class="container">
+  <table class="table table-bordered" *ngIf="isLoaded">
+    <tr>
+      <th>ID</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Email</th>
+      <th>Username</th>
+      <th>Role</th>
+    </tr>
+    <tr>
+      <td>{{u.userId}}</td>
+      <td>{{u.fname}}</td>
+      <td>{{u.lname}}</td>
+      <td>{{u.email}}</td>
+      <td>{{u.username}}</td>
+      <td>{{u.userRole}}</td>
+    </tr>
+
+    <h4>Billing Address</h4>
+    <tr>
+      <th>Street</th>
+      <th>City</th>
+      <th>State</th>
+      <th>ZIP</th>
+    </tr>
+
+    <tr>
+      <th>{{u.billingAddress.streetName}}</th>
+      <th>{{u.billingAddress.city}}</th>
+      <th>{{u.billingAddress.state}}</th>
+      <th>{{u.billingAddress.zip}}</th>
+    </tr>
+
+
+    <h4>Shipping Address</h4>
+    <tr>
+      <th>Street</th>
+      <th>City</th>
+      <th>State</th>
+      <th>ZIP</th>
+    </tr>
+
+    <tr>
+      <th>{{u.shippingAddress.streetName}}</th>
+      <th>{{u.shippingAddress.city}}</th>
+      <th>{{u.shippingAddress.state}}</th>
+      <th>{{u.shippingAddress.zip}}</th>
+    </tr>
+
+    <tr>
+      <td>
+        <button type="button" (click)="goBack()" class="btn btn-success">Back</button>
+      </td>
+    </tr>
+  </table>
+</div>

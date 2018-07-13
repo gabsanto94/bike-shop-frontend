@@ -1,7 +1,7 @@
 import {Product} from './Product';
 import {Cart} from './Cart';
 
-export interface CartItem{
+export class CartItem{
 
   cartItemId: number;
   quantity: number;

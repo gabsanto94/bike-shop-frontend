@@ -1,5 +1,6 @@
 import {ShippingAddress} from './ShippingAddress';
 import {BillingAddress} from './BillingAddress';
+import {Cart} from "./Cart";
 
 export interface User {
 
@@ -13,6 +14,8 @@ export interface User {
 
   billingAddress : BillingAddress;
   shippingAddress : ShippingAddress;
+
+  cart : Cart;
 
 
 }
