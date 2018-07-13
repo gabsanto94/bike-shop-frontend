@@ -20,10 +20,12 @@
       <td>{{openProduct.price}}</td>
       <td>{{openProduct.status}}</td>
       <td>{{openProduct.inStock}}</td>
-      <td>
+
+
+      <td *ngIf="adminVar === 'admin' ">
         <button class="btn btn-primary" (click)="editProduct()">Edit Product</button>
       </td>
-      <td>
+      <td *ngIf="adminVar === 'admin'">
         <button class="btn btn-primary" (click)="createProduct()">Create Product</button>
       </td>
     </tr>
@@ -56,8 +58,8 @@
         <button class="btn btn-primary" (click)="deleteProduct()">Actually Delete It</button>
       </td>
     </tr>
-  
-  </table>  
+
+  </table>
 
   <table class="table table-bordered" *ngIf="isCreateClicked">
       <p>WOW CREATE A BIKE HERE</p>
@@ -82,6 +84,6 @@
           <button class="btn btn-primary" (click)="addTheProduct()">Submit Add</button>
         </td>
       </tr>
-    
-    </table>  
+
+    </table>
 </div>

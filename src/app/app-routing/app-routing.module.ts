@@ -22,15 +22,15 @@ const routes = [
       path: 'products', component:ProductViewComponent
     },
     {
-      path: 'product/:id', component:ProductViewIndividualComponent
+      path: 'products/:id', component:ProductViewIndividualComponent
     },
 
     //customer path
       { path: 'login', component: LoginComponent },
       { path: 'register', component: RegisterComponent},
-      { path: 'profile', component: RegisterComponent},//product
       { path: 'admin/users', component: ViewUsersComponent},//manageUsers
       { path: 'cart', component: CartComponent},//Cart
+
        {
          path: 'logout', component: LoginComponent
        }

@@ -27,7 +27,7 @@ export class CartComponent implements OnInit {
 
 
   ngOnInit(): void {
-    //this.cartService.getCartItems(userId).subscribe();
+    this.cartService.getCartItems(this.user.userId).subscribe();
   }
 
   removeItemFromCart(id:number): void {
@@ -43,5 +43,3 @@ export class CartComponent implements OnInit {
     return grandTotal.toString();
   }
 }
-//this.cartService.getCart(this.user.userId)
-//this.retrieveCart();

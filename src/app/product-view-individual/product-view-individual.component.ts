@@ -17,6 +17,7 @@ export class ProductViewIndividualComponent implements OnInit {
   @Input() openProduct: Product;
   //this is for the button to edit products
   public isClicked: boolean = false;
+  public adminVar = localStorage.getItem("role");
   public isCreateClicked: boolean = false;
   public idprod = 0;
   //variables for updateing
@@ -47,6 +48,9 @@ export class ProductViewIndividualComponent implements OnInit {
   ngOnInit() {
     const id = +this.route.snapshot.paramMap.get('id');
     this.idprod = id;
+    console.log("next is role, please be");
+    console.log(this.adminVar);
+    console.log("above this please be");
     console.log(id);
     console.log("individual product view constructor");
     if(id) {
@@ -100,5 +104,7 @@ export class ProductViewIndividualComponent implements OnInit {
     //update the product
    this.productService.addProduct(product).subscribe();
   }
-  
+
+
+
 }
